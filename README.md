@@ -49,7 +49,9 @@ Obtain the managed solution package (`.zip`) from the release location
 (GitHub Releases, internal repo, or deployment pipeline).
 
 ✅ Only **managed** solutions are supported for deployment.
-Default Viewer [(https://github.com/MSPFE2019/DefaultViewer/blob/main/DefaultViewerV5_1_0_0_2_managed.zip)]
+
+
+Default Viewer (https://github.com/MSPFE2019/DefaultViewer/blob/main/DefaultViewerV5_1_0_0_2_managed.zip)
 ---
 
 ### Step 2: Import the Managed Solution
