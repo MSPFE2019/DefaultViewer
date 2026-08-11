@@ -6,8 +6,19 @@ This app provides read-only visibility into Power Platform resources created in 
 **Default environment**, while enforcing governance, least-privilege access,
 and consistent scoping rules.
 
-The app is delivered as a **Power Platform managed solution** and is designed to
-work **exclusively with the Power Platform CoE Starter Kit**.
+The app is available in two forms:
+
+- **Power Apps code app** (recommended, actively developed) — a React +
+  TypeScript + Vite implementation in [`code-app/`](code-app/README.md),
+  runnable locally with demo data and deployable via the Power Platform CLI.
+  See [`code-app/README.md`](code-app/README.md) for prerequisites, local
+  development, configuration, and deployment steps.
+- **Legacy canvas app managed solution** — the original Power Apps canvas
+  app, distributed as a managed solution `.zip` (see below). This remains
+  documented here for existing installations; new deployments should prefer
+  the code app.
+
+Both are designed to work **exclusively with the Power Platform CoE Starter Kit**.
 
 ---
 
@@ -29,6 +40,9 @@ result in missing data or permission errors.
 ---
 
 ## Deployment Instructions (Managed Solution)
+
+> These instructions apply to the **legacy canvas app**. For the Power Apps
+> code app, see [`code-app/README.md`](code-app/README.md) instead.
 
 ### Prerequisites
 
@@ -160,4 +174,4 @@ by **user email domain**.
 
 ```powerfx
 userdomain in DerivedOwner.UserEmail
-``
+```
