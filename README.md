@@ -39,7 +39,7 @@ result in missing data or permission errors.
 
 ---
 
-## Deployment Instructions (Managed Solution)
+## Deployment Instructions (Managed or Unmanaged Solution)
 
 > These instructions apply to the **legacy canvas app**. For the Power Apps
 > code app, see [`code-app/README.md`](code-app/README.md) instead.
@@ -57,18 +57,24 @@ Before importing the solution, ensure the following are in place:
 
 ---
 
-### Step 1: Download the Managed Solution
+### Step 1: Download the Solution
 
-Obtain the managed solution package (`.zip`) from the release location
+Obtain the solution package (`.zip`) from the release location
 (GitHub Releases, internal repo, or deployment pipeline).
 
-✅ Only **managed** solutions are supported for deployment.
-
+✅ Use the **managed** solution for production deployments.
 
 [![Download Managed Solution](https://img.shields.io/badge/Download-Managed%20Solution-blue)](https://github.com/MSPFE2019/DefaultViewer/blob/main/DefaultViewerV5_1_0_0_2_managed.zip)
+
+An **unmanaged** package is also available for development and customization
+scenarios (same components, editable after import). Unmanaged solutions cannot
+be uninstalled cleanly, so import them into a development environment only.
+
+[![Download Unmanaged Solution](https://img.shields.io/badge/Download-Unmanaged%20Solution-green)](https://github.com/MSPFE2019/DefaultViewer/blob/main/DefaultViewerV5_1_0_0_2_unmanaged.zip)
+
 ---
 
-### Step 2: Import the Managed Solution
+### Step 2: Import the Solution
 
 1. Go to **Power Apps**  
    https://make.powerapps.com
@@ -78,7 +84,7 @@ Obtain the managed solution package (`.zip`) from the release location
 3. Navigate to  
    **Solutions → Import solution**
 
-4. Upload the managed solution `.zip` file
+4. Upload the solution `.zip` file (managed or unmanaged)
 
 5. Follow the import wizard:
    - Review solution details
