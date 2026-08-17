@@ -1,8 +1,10 @@
 # Power Platform Default Environment Viewer
 
+> **Legacy / CoE-only warning:** This package is a legacy viewer coupled to CoE Starter Kit tables. It is not a general-purpose Power Platform admin-center viewer, and the CoE Starter Kit is legacy/reference tooling. Use the Power Platform admin center for current administration and governance. Do not deploy this package unless you have a validated, supported CoE Starter Kit dependency and have verified the solution metadata in the target environment.
+
 ## Overview
 
-This app provides read-only visibility into Power Platform resources created in the
+This app is documented as providing read-only visibility into resources whose source records identify the
 **Default environment**, while enforcing governance, least-privilege access,
 and consistent scoping rules.
 
@@ -36,8 +38,7 @@ Before importing the solution, ensure the following are in place:
 
 - Power Platform CoE Starter Kit is fully installed and operational
 - Target environment is the **CoE Starter Kit environment**
-- User performing the import has:
-  - **Environment Admin** or **System Administrator** role
+- User performing the import has **System Administrator** (or another role with verified solution-import privileges); **Environment Admin alone is not assumed to be sufficient**.
 - Required connections used by the solution are available
 - Dataverse database is present in the environment
 
@@ -87,12 +88,11 @@ Assign the following role to end users:
 
 **`PPCOE_DefaultEnvViewerRole`**
 
-This role provides **read-only access** to the CoE Starter Kit tables used by the app.
+The role name is package-specific. Verify its Dataverse privileges in the target environment before assigning it; documentation alone does not guarantee that it is read-only.
 
 #### Alternative
 
-You may also assign any of the **default security roles included with the CoE Starter Kit**
-that provide appropriate read access, depending on your governance model.
+Do not assume a default CoE Starter Kit role is read-only. Assign only a role whose table privileges have been reviewed for this solution.
 
 ✅ **Least‑privilege access is strongly recommended.**
 
@@ -125,10 +125,10 @@ After deployment, validate that:
 
 ## Environment Scope
 
-Only resources that exist in the **Default environment** are shown.
+Only records that the app's filters identify as belonging to the **Default environment** are intended to be shown. Confirm the implementation's environment identifier/filter before relying on this as an authoritative environment boundary.
 
-The app determines this by checking whether the environment display name contains
-the word **“Default”**.
+The current documentation indicates that the app checks whether the environment display name contains
+the word **“Default”**. A display-name match is not a reliable environment identity check and can include false positives.
 
 The following fields are used per workload:
 
