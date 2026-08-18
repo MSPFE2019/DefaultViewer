@@ -1,0 +1,271 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --border: #000000;
+  --text: #1b1b1b;
+  --accent: #742774;
+  --accent-contrast: #ffffff;
+  --danger-bg: #fdecea;
+  --danger-text: #611a15;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #005fb8;
+  outline-offset: 2px;
+}
+
+.screen {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px 48px;
+  min-height: 100%;
+  position: relative;
+}
+
+.app-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 16px 30px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.main-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.tab-selector {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #d6d6d6;
+}
+
+.tab-selector-item {
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: var(--text);
+}
+
+.tab-selector-item.selected {
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.totals-text {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.icon-button {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.home-button,
+.info-button {
+  position: absolute;
+  top: 16px;
+}
+
+.home-button {
+  left: 24px;
+}
+
+.info-button {
+  right: 24px;
+  bottom: 16px;
+  top: auto;
+  border-color: transparent;
+}
+
+.tab-panels {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.resource-table-wrapper {
+  overflow-x: auto;
+}
+
+.resource-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.resource-table th,
+.resource-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.resource-table th {
+  font-weight: 700;
+  background: #fafafa;
+  position: sticky;
+  top: 0;
+}
+
+.resource-table-status {
+  text-align: center;
+  padding: 32px 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.error-banner {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid #f1b0b7;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--bg);
+  text-align: center;
+  padding: 24px;
+}
+
+.loading-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  max-width: 40rem;
+}
+
+.loading-spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid #d7f5df;
+  border-top-color: #2e8540;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}
+
+.about-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 32px;
+  margin-top: 56px;
+  line-height: 1.5;
+}
+
+.about-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.about-table th,
+.about-table td {
+  border: 1px solid #d6d6d6;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .screen {
+    padding: 12px;
+  }
+
+  .home-button,
+  .info-button {
+    position: static;
+    margin-bottom: 8px;
+  }
+
+  .totals-text {
+    margin-left: 0;
+  }
+}

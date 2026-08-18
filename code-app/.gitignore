@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Power Platform CLI local environment/app configuration and generated
+# schemas — these are specific to the Power Platform environment you run
+# `pac code init` / `pac code add-data-source` against and should not be
+# committed. See README.md > "Power Platform setup".
+power.config.json
+.power/
+.env
+.env.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
